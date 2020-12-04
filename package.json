@@ -4,7 +4,8 @@
   "description": "Day 1 of the ",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "day": "ts-node index.ts"
   },
   "keywords": [],
   "author": "",

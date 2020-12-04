@@ -1,7 +1,9 @@
 import { readFileSync } from 'fs'
 
+import * as path from 'path'
+
 const processInput = (): number[] => {
-    const data = readFileSync('./input.txt', 'utf8');
+    const data = readFileSync(path.join(__dirname, "input.txt"), 'utf8');
     const lines = data.split(/\r?\n/);
     return lines.map((line) => parseInt(line.trim()))
 }
@@ -42,5 +44,7 @@ const partTwo = () => {
     }
 }
 
-partOne()
-partTwo()
+export const runSolution = () => {
+    partOne()
+    partTwo()
+}
