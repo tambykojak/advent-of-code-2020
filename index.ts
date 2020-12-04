@@ -12,8 +12,6 @@ if (!fileUtils.doesFileExist(scriptPath)) {
     process.exit()
 }
 
-
-
 (async () => {
     const problemModule = require(scriptPath)
     console.info(`Running Day ${dayNumber} solution...\n`)
