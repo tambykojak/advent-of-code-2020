@@ -1,0 +1,18 @@
+{
+  "name": "day-1",
+  "version": "1.0.0",
+  "description": "Day 1 of the ",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
+  }
+}
