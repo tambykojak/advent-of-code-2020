@@ -1,10 +1,10 @@
 import fileUtils from './utilities/file'
 import Timer from './utilities/timer'
-import * as path from 'path'
+import { join } from 'path'
 
 const ARGS_DAY_NUMBER_INDEX = 2
 const dayNumber = process.argv[ARGS_DAY_NUMBER_INDEX] || 1
-const scriptPath = path.join(__dirname, `day-${dayNumber}`, "index.ts")
+const scriptPath = join(__dirname, `day-${dayNumber}`, "index.ts")
 
 if (!fileUtils.doesFileExist(scriptPath)) {
     console.error(`Can't find ${scriptPath}. Are you sure it's there?`)
