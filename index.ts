@@ -3,7 +3,6 @@ import Timer from './utilities/timer'
 import * as path from 'path'
 
 const ARGS_DAY_NUMBER_INDEX = 2
-const MILIS_IN_SECOND = 1000
 const dayNumber = process.argv[ARGS_DAY_NUMBER_INDEX] || 1
 const scriptPath = path.join(__dirname, `day-${dayNumber}`, "index.ts")
 
