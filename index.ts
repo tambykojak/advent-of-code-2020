@@ -12,18 +12,18 @@ if (!fileUtils.doesFileExist(scriptPath)) {
     process.exit()
 }
 
-const run = async () => {
+
+
+(async () => {
     const problemModule = require(scriptPath)
     console.info(`Running Day ${dayNumber} solution...\n`)
-    
     const timer = new Timer()
     
     try {
         await problemModule.runSolution()
-        timer.log("\nThe solution took /s (/ms) seconds to run.")
+        timer.log("\nThe solution took /s seconds to run.")
     } catch (error) {
-        timer.log(`\nThe solution errored out with code ${error} after /s (/ms) seconds.`)
+        timer.log(`The solution errored after /s seconds.\n`)
+        console.error(error)
     }
-}
-
-run()
+})()

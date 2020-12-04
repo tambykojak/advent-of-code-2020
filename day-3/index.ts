@@ -1,13 +1,11 @@
 import { readFileSync } from 'fs'
 import { join } from 'path'
-import Timer from '../utilities/timer'
 
 type Slope = {
     x: number
     y: number
 }
 
-const timer = new Timer()
 const processInput = (): string[][] => {
     const data = readFileSync(join(__dirname, './input.txt'), 'utf8');
     const lines = data.split(/\r?\n/);
@@ -53,7 +51,7 @@ export const runSolution = (): void => {
         { x: 7, y: 1 },
         { x: 1, y: 2 },
     ]
-    
+
     let product = 1
     
     for (const slope of slopes) {
