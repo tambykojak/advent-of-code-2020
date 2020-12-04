@@ -14,13 +14,32 @@ if (!fileUtils.doesFileExist(scriptPath)) {
 (async () => {
     const problemModule = require(scriptPath)
     console.info(`Running Day ${dayNumber} solution...\n`)
-    const timer = new Timer()
     
+    
+    if (!problemModule.partOne) {
+        console.error(`Day ${dayNumber} module does not export a function name "partOne".`)
+        return
+    }
+
+    const timer = new Timer()
+
     try {
-        await problemModule.runSolution()
-        timer.log("\nThe solution took /s seconds to run.")
+        await problemModule.partOne()
+        timer.log(`\nThe day ${dayNumber}, part 1 solution took /s seconds to run.\n`)
     } catch (error) {
-        timer.log(`The solution errored after /s seconds.\n`)
+        timer.log(`The day ${dayNumber}, part 1 solution errored after /s seconds.\n`)
+        console.error(error)
+    }
+
+    timer.reset()
+
+    if (!problemModule.partTwo) return
+
+    try {
+        await problemModule.partTwo()
+        timer.log(`\nThe day ${dayNumber}, part 2 solution took /s seconds to run.`)
+    } catch (error) {
+        timer.log(`The day ${dayNumber}, part 2 solution errored after /s seconds.\n`)
         console.error(error)
     }
 })()

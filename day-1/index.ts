@@ -1,16 +1,16 @@
 import { readFileSync } from 'fs'
 
-import * as path from 'path'
+import { join } from 'path'
 
 const processInput = (): number[] => {
-    const data = readFileSync(path.join(__dirname, "input.txt"), 'utf8');
+    const data = readFileSync(join(__dirname, "input.txt"), 'utf8');
     const lines = data.split(/\r?\n/);
     return lines.map((line) => parseInt(line.trim()))
 }
 
 const entries = processInput()
 
-const partOne = () => {
+export const partOne = () => {
     for (let i = 0; i < entries.length; i ++) {
         const entryA = entries[i]
     
@@ -25,7 +25,7 @@ const partOne = () => {
     }
 }
 
-const partTwo = () => {
+export const partTwo = () => {
     for (let i = 0; i < entries.length; i ++) {
         const entryA = entries[i]
     
@@ -42,9 +42,4 @@ const partTwo = () => {
             }
         }
     }
-}
-
-export const runSolution = () => {
-    partOne()
-    partTwo()
 }

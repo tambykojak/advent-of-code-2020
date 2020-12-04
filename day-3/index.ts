@@ -43,7 +43,12 @@ const traverseMap = (map: string[][], slope: Slope): number => {
     return treeCount
 }
 
-export const runSolution = (): void => {
+export const partOne = (): void => {
+    const treeCount = traverseMap(map, { x: 3, y: 1 })
+    console.log(`The answer is ${treeCount}.`)
+}
+
+export const partTwo = (): void => {
     const slopes: Slope[] = [
         { x: 1, y: 1 },
         { x: 3, y: 1 },
