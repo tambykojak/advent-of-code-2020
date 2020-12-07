@@ -75,6 +75,7 @@ export const partTwo = (): void => {
     seatIds.push(seatId)
   }
 
+  // BAD
   const sortedSeatIds = seatIds.sort((a, b) => a - b)
 
   for (let i = 0; i < sortedSeatIds.length - 1; i += 1) {
