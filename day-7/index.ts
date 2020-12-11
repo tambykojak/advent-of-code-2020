@@ -87,7 +87,6 @@ export const partOne = (): void => {
   }
 
   const graph = createAdjacencyList()
-  console.log(graph)
   const target = 'shiny gold'
   const ancestors = getPossibleAncestors(graph, target)
   console.log(
